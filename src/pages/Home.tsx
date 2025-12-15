@@ -25,7 +25,7 @@ export const Home: React.FC = () => {
           
           {/* Left Group - Blue boxes + Certification */}
           <div className="top-left-group">
-            {/* Blue boxes stacked vertically */}
+            {/* Blue boxes in a row */}
             <div className="blue-boxes">
               <div className="framework-box blue-box">
                 <div className="box-content">AI Role</div>
@@ -37,6 +37,16 @@ export const Home: React.FC = () => {
                 <div className="box-content">Education</div>
               </div>
             </div>
+            
+            {/* Arrow from blue boxes group to central statement border */}
+            <svg className="arrow-blue-group-to-center" viewBox="0 0 600 400" preserveAspectRatio="none">
+              <defs>
+                <marker id="arrowhead-blue-group" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                  <polygon points="0 0, 10 5, 0 10" fill="#4A90E2" />
+                </marker>
+              </defs>
+              <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#4A90E2" strokeWidth="2.5" strokeDasharray="4,4" markerEnd="url(#arrowhead-blue-group)" />
+            </svg>
             
             {/* Certification box - positioned to left and slightly below */}
             <div className="certification-wrapper">
@@ -54,15 +64,6 @@ export const Home: React.FC = () => {
               </svg>
             </div>
             
-            {/* Arrow from blue boxes to central statement */}
-            <svg className="arrow-left-to-center" viewBox="0 0 300 400" preserveAspectRatio="none">
-              <defs>
-                <marker id="arrowhead-left-blue" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-                  <polygon points="0 0, 8 4, 0 8" fill="#4A90E2" />
-                </marker>
-              </defs>
-              <path d="M 50 0 Q 150 150, 250 400" stroke="#4A90E2" strokeWidth="2" strokeDasharray="4,4" fill="none" markerEnd="url(#arrowhead-left-blue)" />
-            </svg>
           </div>
 
           {/* Right Group - Orange boxes */}
@@ -79,14 +80,14 @@ export const Home: React.FC = () => {
               </div>
             </div>
             
-            {/* Arrow from right group to central statement */}
-            <svg className="arrow-right-to-center" viewBox="0 0 300 400" preserveAspectRatio="none">
+            {/* Arrow from orange boxes group to central statement border */}
+            <svg className="arrow-orange-group-to-center" viewBox="0 0 600 400" preserveAspectRatio="none">
               <defs>
-                <marker id="arrowhead-right-orange" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-                  <polygon points="0 0, 8 4, 0 8" fill="#FF8C42" />
+                <marker id="arrowhead-orange-group" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                  <polygon points="0 0, 10 5, 0 10" fill="#FF8C42" />
                 </marker>
               </defs>
-              <path d="M 250 0 Q 150 150, 50 400" stroke="#FF8C42" strokeWidth="2" strokeDasharray="4,4" fill="none" markerEnd="url(#arrowhead-right-orange)" />
+              <line x1="100%" y1="50%" x2="0" y2="50%" stroke="#FF8C42" strokeWidth="2.5" strokeDasharray="4,4" markerEnd="url(#arrowhead-orange-group)" />
             </svg>
           </div>
 
@@ -106,14 +107,14 @@ export const Home: React.FC = () => {
               </div>
             </div>
             
-            {/* Arrow from purple boxes to central statement */}
-            <svg className="arrow-purple-to-center" viewBox="0 0 300 400" preserveAspectRatio="none">
+            {/* Arrow from purple boxes group to central statement border */}
+            <svg className="arrow-purple-group-to-center" viewBox="0 0 400 500" preserveAspectRatio="none">
               <defs>
-                <marker id="arrowhead-purple" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-                  <polygon points="0 0, 8 4, 0 8" fill="#9B59B6" />
+                <marker id="arrowhead-purple-group" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                  <polygon points="0 0, 10 5, 0 10" fill="#9B59B6" />
                 </marker>
               </defs>
-              <path d="M 50 400 Q 150 250, 250 0" stroke="#9B59B6" strokeWidth="2" strokeDasharray="4,4" fill="none" markerEnd="url(#arrowhead-purple)" />
+              <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#9B59B6" strokeWidth="2.5" strokeDasharray="4,4" markerEnd="url(#arrowhead-purple-group)" />
             </svg>
           </div>
 
@@ -131,14 +132,14 @@ export const Home: React.FC = () => {
               </div>
             </div>
             
-            {/* Arrow from white boxes to central statement */}
-            <svg className="arrow-white-to-center" viewBox="0 0 300 400" preserveAspectRatio="none">
+            {/* Arrow from white boxes group to central statement border */}
+            <svg className="arrow-white-group-to-center" viewBox="0 0 400 500" preserveAspectRatio="none">
               <defs>
-                <marker id="arrowhead-white" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-                  <polygon points="0 0, 8 4, 0 8" fill="#ffffff" />
+                <marker id="arrowhead-white-group" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                  <polygon points="0 0, 10 5, 0 10" fill="#ffffff" />
                 </marker>
               </defs>
-              <path d="M 250 400 Q 150 250, 50 0" stroke="#ffffff" strokeWidth="2" strokeDasharray="4,4" fill="none" markerEnd="url(#arrowhead-white)" />
+              <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#ffffff" strokeWidth="2.5" strokeDasharray="4,4" markerEnd="url(#arrowhead-white-group)" />
             </svg>
           </div>
         </div>
@@ -157,10 +158,16 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Navigation Link */}
+        {/* Navigation Links */}
         <div className="home-navigation">
           <Link to="/skills" className="nav-link">
             View AI Skills by Role →
+          </Link>
+          <Link to="/upskill-process" className="nav-link" style={{ marginLeft: '20px' }}>
+            View AIST Upskill Program →
+          </Link>
+          <Link to="/additional" className="nav-link" style={{ marginLeft: '20px' }}>
+            Additional Screen →
           </Link>
         </div>
       </div>

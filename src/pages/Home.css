@@ -89,9 +89,28 @@
 
 .blue-boxes {
   display: flex;
-  flex-direction: column;
-  gap: 18px;
+  flex-direction: row;
+  gap: 15px;
   margin-bottom: 15px;
+  align-items: center;
+  position: relative;
+}
+
+.arrow-blue-group-to-center {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 480px;
+  height: 2px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.9;
+  transform: translateY(-50%);
+}
+
+/* Ensure arrow connects to the border of central statement */
+.arrow-blue-group-to-center line {
+  stroke-width: 2.5;
 }
 
 .certification-wrapper {
@@ -116,16 +135,6 @@
   opacity: 0.8;
 }
 
-.arrow-left-to-center {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  width: 280px;
-  height: 420px;
-  z-index: 3;
-  pointer-events: none;
-  opacity: 0.8;
-}
 
 /* Top Right Group - Orange boxes */
 .top-right-group {
@@ -139,17 +148,19 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+  position: relative;
 }
 
-.arrow-right-to-center {
+.arrow-orange-group-to-center {
   position: absolute;
   top: 50%;
   right: 100%;
-  width: 280px;
-  height: 420px;
+  width: 500px;
+  height: 2px;
   z-index: 3;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: translateY(-50%);
 }
 
 /* Bottom Left Group - Purple boxes */
@@ -164,17 +175,19 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+  position: relative;
 }
 
-.arrow-purple-to-center {
+.arrow-purple-group-to-center {
   position: absolute;
-  bottom: 50%;
-  left: 100%;
-  width: 280px;
-  height: 420px;
+  bottom: 100%;
+  left: 50%;
+  width: 2px;
+  height: 400px;
   z-index: 3;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: translateX(-50%);
 }
 
 /* Bottom Right Group - White boxes */
@@ -189,17 +202,19 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+  position: relative;
 }
 
-.arrow-white-to-center {
+.arrow-white-group-to-center {
   position: absolute;
-  bottom: 50%;
-  right: 100%;
-  width: 280px;
-  height: 420px;
+  bottom: 100%;
+  right: 50%;
+  width: 2px;
+  height: 400px;
   z-index: 3;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: translateX(50%);
 }
 
 /* Framework Boxes */
