@@ -112,8 +112,8 @@ export const AISkillsPieChart: React.FC<AISkillsPieChartProps> = ({ selectedRole
   return (
     <div className="pie-chart-container">
       <div className="chart-wrapper">
-        <ResponsiveContainer width="100%" height="100%">
-          <PieChart>
+        <ResponsiveContainer width="100%" height="100%" minHeight={500}>
+          <PieChart margin={{ top: 80, right: 60, bottom: 80, left: 60 }}>
           {/* Inner ring - AI Areas (rendered first so it's behind outer ring) */}
           <Pie
             data={innerData}
@@ -147,7 +147,7 @@ export const AISkillsPieChart: React.FC<AISkillsPieChartProps> = ({ selectedRole
                   lines.push('SDLC');
                 } else {
                   // Generic splitting for other multi-word labels
-                  words.forEach(word => {
+                  words.forEach((word: string) => {
                     if (word) lines.push(word);
                   });
                 }
@@ -202,7 +202,7 @@ export const AISkillsPieChart: React.FC<AISkillsPieChartProps> = ({ selectedRole
               );
             }}
             innerRadius={60}
-            outerRadius={130}
+            outerRadius={120}
             fill="#8884d8"
             dataKey="value"
             startAngle={90}
@@ -220,31 +220,39 @@ export const AISkillsPieChart: React.FC<AISkillsPieChartProps> = ({ selectedRole
             labelLine={false}
             label={({ name, cx, cy, midAngle, outerRadius }) => {
               const RADIAN = Math.PI / 180;
-              const radius = outerRadius + 25;
+              const radius = outerRadius + 20;
               const x = cx + radius * Math.cos(-midAngle * RADIAN);
-              const y = cy + radius * Math.sin(-midAngle * RADIAN);
+              let y = cy + radius * Math.sin(-midAngle * RADIAN);
               
-              // Only show labels if there's reasonable space
-              if (outerData.length < 60) {
-                return (
-                  <text
-                    x={x}
-                    y={y}
-                    fill="#ffffff"
-                    textAnchor={x > cx ? 'start' : 'end'}
-                    dominantBaseline="central"
-                    fontSize="9"
-                    className="skill-label"
-                    style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}
-                  >
-                    {name.length > 20 ? name.substring(0, 20) + '...' : name}
-                  </text>
-                );
+              // Adjust vertical position for top/bottom labels to ensure visibility
+              const isTop = y < cy - 20;
+              const isBottom = y > cy + 20;
+              
+              // Move top labels up and bottom labels down to ensure they're visible
+              if (isTop) {
+                y = y - 5; // Move top labels slightly up
+              } else if (isBottom) {
+                y = y + 5; // Move bottom labels slightly down
               }
-              return null;
+              
+              // Always show labels, but adjust positioning to ensure visibility
+              return (
+                <text
+                  x={x}
+                  y={y}
+                  fill="#ffffff"
+                  textAnchor={x > cx ? 'start' : 'end'}
+                  dominantBaseline={isTop ? 'text-after-edge' : isBottom ? 'text-before-edge' : 'central'}
+                  fontSize="8"
+                  className="skill-label"
+                  style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
+                >
+                  {name.length > 18 ? name.substring(0, 18) + '...' : name}
+                </text>
+              );
             }}
             innerRadius={140}
-            outerRadius={220}
+            outerRadius={200}
             fill="#8884d8"
             dataKey="value"
             startAngle={90}
