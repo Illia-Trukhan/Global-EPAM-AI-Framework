@@ -169,6 +169,9 @@ export const Home: React.FC = () => {
           <Link to="/ai-upskill-workflow" className="nav-link" style={{ marginLeft: '20px' }}>
             View AI Upskill Workflow →
           </Link>
+          <Link to="/organizational-structure" className="nav-link" style={{ marginLeft: '20px' }}>
+            Organizational Structure →
+          </Link>
           <Link to="/additional" className="nav-link" style={{ marginLeft: '20px' }}>
             Additional Screen →
           </Link>

@@ -5,6 +5,7 @@ import { SkillsPage } from './pages/SkillsPage';
 import { UpskillProcessPage } from './pages/UpskillProcessPage';
 import { Additional } from './pages/Additional';
 import { AIUpskillWorkflow } from './pages/AIUpskillWorkflow';
+import { OrganizationalStructure } from './pages/OrganizationalStructure';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/upskill-process" element={<UpskillProcessPage />} />
         <Route path="/additional" element={<Additional />} />
         <Route path="/ai-upskill-workflow" element={<AIUpskillWorkflow />} />
+        <Route path="/organizational-structure" element={<OrganizationalStructure />} />
       </Routes>
     </Router>
   );

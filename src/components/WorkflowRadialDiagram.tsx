@@ -121,8 +121,8 @@ export const WorkflowRadialDiagram: React.FC = () => {
   const [hoveredStep, setHoveredStep] = useState<string | null>(null);
 
   // Calculate node positions in a circle
-  const centerX = 500;
-  const centerY = 450;
+  const centerX = 600;
+  const centerY = 500;
   const radius = 280;
   const nodeRadius = 35;
 
@@ -329,7 +329,7 @@ export const WorkflowRadialDiagram: React.FC = () => {
       <div className="workflow-radial-wrapper">
         <svg
           className="workflow-radial-svg"
-          viewBox="0 0 1000 900"
+          viewBox="0 0 1200 1000"
           preserveAspectRatio="xMidYMid meet"
           onClick={handleBackgroundClick}
         >
