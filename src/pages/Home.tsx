@@ -164,7 +164,10 @@ export const Home: React.FC = () => {
             View AI Skills by Role →
           </Link>
           <Link to="/upskill-process" className="nav-link" style={{ marginLeft: '20px' }}>
-            View AIST Upskill Program →
+            View AI Upskill Program →
+          </Link>
+          <Link to="/ai-upskill-workflow" className="nav-link" style={{ marginLeft: '20px' }}>
+            View AI Upskill Workflow →
           </Link>
           <Link to="/additional" className="nav-link" style={{ marginLeft: '20px' }}>
             Additional Screen →
