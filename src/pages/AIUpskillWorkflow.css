@@ -1,0 +1,78 @@
+.ai-upskill-workflow-page {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #1a0d2e 100%);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.workflow-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.workflow-title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 5px 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.back-link-container {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(74, 144, 226, 0.2);
+  border: 2px solid #4A90E2;
+  border-radius: 8px;
+  color: #4A90E2;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  background: rgba(74, 144, 226, 0.3);
+  color: #6BA3D8;
+  transform: translateX(-5px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.workflow-description {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.workflow-description p {
+  margin: 0;
+}
+

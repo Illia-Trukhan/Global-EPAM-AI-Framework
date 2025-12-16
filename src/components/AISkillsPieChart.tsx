@@ -112,7 +112,7 @@ export const AISkillsPieChart: React.FC<AISkillsPieChartProps> = ({ selectedRole
   return (
     <div className="pie-chart-container">
       <div className="chart-wrapper">
-        <ResponsiveContainer width="100%" height={700}>
+        <ResponsiveContainer width="100%" height="100%">
           <PieChart>
           {/* Inner ring - AI Areas (rendered first so it's behind outer ring) */}
           <Pie
